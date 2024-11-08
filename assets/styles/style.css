@@ -1,0 +1,123 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1e293b;
+    color: #e2e8f0;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  /* Search Bar and Filter Button */
+  .search-container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .search-bar {
+    padding: 8px;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    outline: none;
+    width: 200px;
+  }
+  
+  .filter-button {
+    padding: 8px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    background-color: #1e293b;
+    color: #e2e8f0;
+    cursor: pointer;
+  }
+  
+  /* Navigation Tabs */
+  .nav-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .tab {
+    padding: 10px 20px;
+    color: #cbd5e1;
+    text-decoration: none;
+    border-radius: 8px;
+    background-color: #334155;
+  }
+  
+  .tab.active {
+    background-color: #2563eb;
+    color: #fff;
+  }
+  
+  /* Movie List */
+  .movie-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .movie-item {
+    display: flex;
+    align-items: center;
+    background-color: #1e293b;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .movie-poster {
+    width: 120px;
+    height: 80px;
+    border-radius: 4px;
+    margin-right: 15px;
+  }
+  
+  .movie-details {
+    flex: 1;
+  }
+  
+  .movie-title {
+    font-size: 1.2em;
+    margin: 0;
+  }
+  
+  .movie-info {
+    font-size: 0.9em;
+    color: #94a3b8;
+    margin: 5px 0;
+  }
+  
+  .rating {
+    background-color: #475569;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.8em;
+  }
+  
+  .movie-score {
+    font-size: 1.2em;
+    color: #fbbf24;
+    margin-left: 10px;
+  }
+  
+  /* Buttons */
+  .more-details-button, .add-movie-button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .add-movie-button {
+    display: block;
+    margin: 20px auto;
+  }

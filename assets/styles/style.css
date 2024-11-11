@@ -1,6 +1,7 @@
 /* Table of Contents:
-||-Buttons
 ||-Movie-Item
+||-Buttons
+||-Modal-Window
 ||-Media-Queries
 */
 
@@ -17,11 +18,11 @@
   --palette-highlightB: #B10F2E;
   --palette-highlightB-accent-border: #850b21;
   --palette-text-light: #f0e8e8;
-  --palette-subtext1-light: #C0BCB5;
-  --palette-subtext2-light: #948f88;
+  --palette-subtext-light1: #C0BCB5;
+  --palette-subtext-light2: #948f88;
   --palette-text-dark: #030303;
-  --palette-subtext1-dark: #090F10;
-  --palette-subtext2-dark: #132022;
+  --palette-subtext-dark1: #090F10;
+  --palette-subtext-dark2: #132022;
   --image-header-embed: "./assets/images/directorscut.png";
 }
 
@@ -40,6 +41,9 @@ body {
 }
 
 h1 {
+  font-family: "Alfa Slab One", Arial, serif;
+  font-weight: 600;
+  font-style: normal;
   font-size: 2.5rem;
   text-align: center;
   margin-bottom: 1rem;
@@ -75,10 +79,6 @@ header {
   background-image: var(--image-header-embed);
 }
 
-p {
-  margin: 0.5rem 0;
-}
-
 /* Navigation Tabs */
 .nav-tabs {
   display: flex;
@@ -91,7 +91,7 @@ p {
   color: var(--palette-text-light);
   text-decoration: none;
   border-radius: 0.5rem;
-  background-color: var(--palette-background2);
+  background-color: var(--palette-background3);
 }
 
 .tab.active {
@@ -118,14 +118,14 @@ p {
 }
 
 .movie-poster {
-  width: 120px;
-  height: 80px;
+  height: 8rem;
+  flex: 0 8 8rem;
   border-radius: 0.25rem;
-  margin-right: 1rem;
+  margin-right: 1.65rem;
 }
 
 .movie-details {
-  flex: 1;
+  display: inline-block;
 }
 
 .movie-title {
@@ -133,17 +133,30 @@ p {
   margin: 0;
 }
 
-.movie-info {
-  font-size: 0.9rem;
-  color: var(--palette-subtext1-light);
-  margin: 0.2rem 0;
+.movie-info,
+.actors {
+  font-size: 0.85rem;
+  color: var(--palette-subtext-light1);
+  margin: 0.5rem 0;
+  min-width: 12rem;
+}
+
+.actors {
+  margin-bottom: 1rem;
+}
+
+.rating,
+.year,
+.genre,
+.duration {
+  margin-right: 0.15rem;
 }
 
 .rating {
   /* This element has inverted colors */
   background-color: var(--palette-foreground1);
-  color: var(--palette-subtext1-dark);
-  padding: 0.2rem 0.3rem;
+  color: var(--palette-subtext-dark1);
+  padding: 0.2rem 0.25rem;
   border-radius: 0.2rem;
   font-size: 0.8rem;
 }
@@ -153,27 +166,46 @@ p {
 }
 
 .duration {
-  color: var(--palette-subtext2-light)
+  color: var(--palette-subtext-light2)
 }
 
 .movie-score {
   font-size: 1.2rem;
   color: var(--palette-highlightA);
-  margin-left: 10px;
+  margin-left: 1rem;
 }
 
 /* ||-Buttons */
-.more-details-button, .add-movie-button {
-  padding: 8px 16px;
+.more-details-button,
+.add-movie-button,
+a.tab {
+  padding: 0.5rem 0.8rem;
   border: none;
-  border-radius: 4px;
-  background-color: var(--palette-background1);
+  border-radius: 0.5rem;
   color: var(--palette-text-light);
   cursor: pointer;
 }
 
-.more-details-button::after{
-  content: url("./assets/images/downbutton.svg");
+.more-details-button {
+  padding: 0.25rem 0.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: var(--palette-background3);
+  background-image: linear-gradient(var(--palette-background3), var(--palette-background2));
+  color: var(--palette-subtext-light2);
+}
+
+.more-details-button::after {
+  display: inline-flex;
+  content: "";
+  background-image: url("../images/downbutton.svg");
+  fill: var(--palette-subtext-light2);
+  stroke: var(--palette-subtext-light2);
+  --button-size: 0.75rem;
+  background-size: var(--button-size);
+  width: var(--button-size);
+  height: var(--button-size);
+  margin-left: calc(var(--button-size)*0.5);
 }
 
 .add-movie-button {
@@ -184,7 +216,23 @@ p {
   box-shadow: 0 0.2rem 0.4rem var(--palette-dropLight);
 }
 
-/* The Modal (background) */
+/* Close Button */
+.close {
+  color: var(--palette-highlightB);
+  float: right; /* TODO This assumes block, needs to be flex */
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: var(--palette-text-dark);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* ||-Modal-Window */
+/* TODO style modal */
 .modal {
   display: none; /* Hidden by default */
   position: fixed;
@@ -197,29 +245,13 @@ p {
   background-color: var(--palette-dropShadow);
 }
 
-/* Modal Content */
 .modal-content {
   background-color: var(--palette-foreground1);
   margin: 15% auto;
   padding: 2rem;
   border: 1px solid var(--palette-foreground2);
-  width: 80%; /* Adjust width as needed */
+  width: 80%; 
   max-width: 800px;
-}
-
-/* Close Button */
-.close {
-  color: var(--palette-highlightB);
-  float: right;
-  font-size: 2rem;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: var(--palette-text-dark);
-  text-decoration: none;
-  cursor: pointer;
 }
 
 /* ||-Media-Queries */

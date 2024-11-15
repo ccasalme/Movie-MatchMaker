@@ -24,6 +24,7 @@
   --palette-subtext-dark1: #090F10;
   --palette-subtext-dark2: #132022;
   --image-header-embed: "./assets/images/directorscut.png";
+  --modal-display: 0;
 }
 
 /* General styles */
@@ -234,7 +235,7 @@ a.tab {
 /* ||-Modal-Window */
 /* TODO style modal */
 .modal {
-  display: none; /* Hidden by default */
+  display: inline-flex; /* Hidden by default */
   position: fixed;
   z-index: 1; /* Sits on top */
   left: 0;

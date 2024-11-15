@@ -252,7 +252,7 @@ a.tab {
   background-color: var(--palette-dropShadow);
 }
 
-.movieForm {
+#movieForm {
   line-height: 1.5;
   background-color: var(--palette-foreground1);
   margin: 15% auto;

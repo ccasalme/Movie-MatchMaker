@@ -105,77 +105,52 @@
     
     <!-- Add Movie Button -->
     <button class="add-movie-button">Add Movie</button>
-
-<!--
-   <dialog class="modal" id="modal">
-    <h2>Movie Input</h2>
-<form id="movieForm" method="dialog">
-    <div>
-        <label for="title">Movie Title</label>
-        <input type='text' id='title' required>
     </div>
-    <div>
-        <label for="personalRating">My Rating</label>
-        <input type='text' id='personalRating' required>
-    </div>
-    <div>
-        <label for="duration">Length of Movie (mins)</label>
-        <input type='text' id='duration' required>
-    </div>
-    <div>
-        <label for="mpaa">MPAA Rating</label>
-        <select id='mpaa' name='mpaa' required>
-        <option value="G">G</option>
-        <option value="PG">PG</option>
-        <option value="PG-13">PG-13</option>
-        <option value="R">R</option>
-        <option value="NC-17">NC-17</option>
-        <option value="Unrated">Unrated</option>
-        </select>
-    </div>
-    <div>
-        <label for="watched">Watched</label>
-        <input type='checkbox' id="watched" name="watched">
-        
-    </div>
-    <div>
-        <label for="thumbnail">Movie Thumbnail</label>
-        <input type="file" id="thumbnail" name="thumbnail">
-    </div>
-    <div>
-        <button class="submit" type="submit">Submit</button>
-    </div>
-</form>
-</dialog>
- 
--->
+    </header>
 
     <!-- Modal -->
-     <div id="movie-modal" class="modal">
-        <!--Modal content--->
-        <div class="modal-content">
-          <span class="close-button">&times;</span>
-          <h2 class="modal-title">Movie Name Here</h2>
-          <img src="image.jpg" alt="Alt name here" class="modal-poster">
-          <div class="modal-info">
-            <span class="mpaa-rating">MPAA Rating</span>
-            <!--
-            <span class="imdb-rating">IMDb Rating</span>
-          -->
-            <span class="personal-rating">MPAA Rating</span>
-            <span class="year">Year</span>
-            <span class="genre">Genre</span>
-            <span class="duration">Duration</span>
-          </div>
-          <p class="actors">Actors</p>
-          <p class="synopsis">Synopsis</p>
-          <p class="watch-status">Watch Status</p>
-          <p class="watch-status">Personal Notes</p>
-       
-  </div>
+  <dialog id="modal" class="modal">
+    <form id="movieForm" method="dialog">
+      <span class="close">&times;</span>
+      <h2>Movie Input</h2>
+      <div>
+        <label for="title">Movie Title</label>
+        <input type="text" id="title" required>
+      </div>
+      <div>
+        <label for="personalRating">My Rating</label>
+        <input type="text" id="personalRating" required>
+      </div>
+      <div>
+        <label for="duration">Length of Movie (mins)</label>
+        <input type="text" id="duration" required>
+      </div>
+      <div>
+        <label for="mpaa">MPAA Rating</label>
+        <select id="mpaa" name="mpaa" required>
+          <option value="G">G</option>
+          <option value="PG">PG</option>
+          <option value="PG-13">PG-13</option>
+          <option value="R">R</option>
+          <option value="NC-17">NC-17</option>
+          <option value="Unrated">Unrated</option>
+        </select>
+      </div>
+      <div>
+        <label for="watched">Watched</label>
+        <input type="checkbox" id="watched" name="watched">
+      </div>
+      <div>
+        <label for="thumbnail">Movie Thumbnail</label>
+        <input type="file" id="thumbnail" name="thumbnail">
+      </div>
+      <button class="submit" type="submit">Submit</button>
+    </form>
+  </dialog>
+
 
   <!-- JavaScript Link -->
-  <script defer src="script.js"></script>
-  <script defer src="js/form.js" type ="text/javascript"></script>
+  <script src="./assets/js/script.js"></script>
+  <script src="./assets/js/modal.js"></script>
 </body>
 </html>

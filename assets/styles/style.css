@@ -235,7 +235,6 @@ a.tab {
 /* ||-Modal-Window */
 /* TODO style modal */
 .modal {
-  display: inline-flex; /* Hidden by default */
   position: fixed;
   z-index: 1; /* Sits on top */
   left: 0;

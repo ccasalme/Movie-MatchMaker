@@ -1,10 +1,23 @@
-const modal = document.querySelector('.modal');
-const openModal = document.querySelector('.open-button');
+const modal = document.querySelector('#modal');
+const openModal = document.querySelector('.add-movie-button');
+const closeButton = document.querySelector('.close'); // Assuming you have a close button
+
 
 openModal.addEventListener('click', () => {
+  console.log("click, add-movie-button");
+  if (modal instanceof HTMLDialogElement) {
     modal.showModal();
+    console.log("click, add-movie-button");
+  }
 })
 
+if (modal) {
+  closeButton.addEventListener('click', (event) => {
+      //if (event.target === modal) {
+        modal.close();
+      //}
+  });
+}
 //Select the form element
 const form = document.getElementById('movieForm');
 const confirmationMessage = document.getElementById('confirmation-message');

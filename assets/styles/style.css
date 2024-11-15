@@ -24,6 +24,7 @@
   --palette-subtext-dark1: #090F10;
   --palette-subtext-dark2: #132022;
   --image-header-embed: "./assets/images/directorscut.png";
+  --modal-display: 0;
 }
 
 /* General styles */

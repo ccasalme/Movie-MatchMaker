@@ -135,14 +135,14 @@ header {
 }
 
 .movie-info,
-.actors {
+.movie-item .actors {
   font-size: 0.85rem;
   color: var(--palette-subtext-light1);
   margin: 0.5rem 0;
   min-width: 12rem;
 }
 
-.actors {
+.movie-item .actors {
   margin-bottom: 1rem;
 }
 
@@ -218,11 +218,18 @@ a.tab {
 }
 
 /* Close Button */
-.close {
-  color: var(--palette-highlightB);
-  float: right; /* TODO This assumes block, needs to be flex */
+.close-button {
+  display: block;
+  float: right;
+  width: 2rem;
+  height: 2rem;
+  background-color: var(--palette-highlightB);
+  color: var(--palette-text-light);
+  border-radius: 50%;
+  text-align: center;
+  line-height: 2rem;
   font-size: 2rem;
-  font-weight: bold;
+  cursor: pointer;
 }
 
 .close:hover,
@@ -245,13 +252,15 @@ a.tab {
   background-color: var(--palette-dropShadow);
 }
 
-.modal-content {
+.movieForm {
+  line-height: 1.5;
   background-color: var(--palette-foreground1);
   margin: 15% auto;
   padding: 2rem;
   border: 1px solid var(--palette-foreground2);
   width: 80%; 
   max-width: 800px;
+  color: var(--palette-text-dark);
 }
 
 /* ||-Media-Queries */

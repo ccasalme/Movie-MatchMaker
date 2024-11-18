@@ -24,7 +24,9 @@
   --palette-text-dark: #030303;
   --palette-subtext-dark1: #090F10;
   --palette-subtext-dark2: #132022;
-  --image-header-embed: url("./assets/images/directorscut.png");
+  --palette-radial-glow: radial-gradient(rgba(255, 255, 255, 0.116) 0, rgba(0, 0, 0, 0) 25%);
+  --image-header-embed: url("../../assets/images/directorscut.png");
+  --image-temp-movie: url("../../assets/images/BlankMovieIcon.png");
   --modal-display: 0;
   --is-watched: 0;
 }
@@ -35,7 +37,7 @@ body {
   flex-direction: column;
   align-items: center;
   font-family: "Urbanist", Arial, sans-serif;
-  font-weight: 100;
+  font-weight: 200;
   font-size: 16px;
   letter-spacing: 0.05rem;
   margin: 0;
@@ -61,6 +63,7 @@ h6 {
 h1 {
   letter-spacing: 0.1rem;
   text-decoration: underline;
+  text-shadow: 1px 3px 5px black;
 }
 h2 {
   font-size: 2.2rem;
@@ -81,6 +84,13 @@ h6 {
 .subtitle {
   text-align: center;
   letter-spacing: 0.2rem;
+  background-image: var(--palette-radial-glow);
+  background-position: 0 200px;
+}
+
+.false-footer {
+  width: 100%;
+  height: 100px;
 }
 
 /* Search Bar and Filter Button */
@@ -118,14 +128,35 @@ h6 {
   cursor: pointer;
 }
 
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: baseline;
+  width: 100%;
+  text-align: center;
+  padding: 0 10%;
+  background-color: var(--palette-background1);
+  background-image: radial-gradient(rgba(255, 255, 255, 0.116) 0, rgba(0, 0, 0, 0) 50%);
+  margin-bottom: 3rem;
+}
+
+
 /* Header */
 header {
   display: flex;
   flex-direction: column;
-  background-image: url("../../assets/images/directorscut.png");
+  background-image: var(--image-header-embed);
   background-size: cover;
   width: 100%;
   height: 10rem;
+  margin-bottom: 4rem;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  margin-top: 3rem;
 }
 
 /* Navigation Tabs */
@@ -141,6 +172,7 @@ header {
   text-decoration: none;
   border-radius: 0.5rem;
   background-color: var(--palette-background3);
+  margin-right: 0.3rem;
 }
 
 .tab.active {
@@ -154,15 +186,22 @@ header {
   padding: 0;
 }
 
+ul {
+  display: flex;
+  flex-direction: column;
+}
+
 /* ||-Movie-Item */
 .movie-item {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   background-color: var(--palette-background1);
   background-image: linear-gradient(var(--palette-background1), var(--palette-background2));
   padding: 1rem;
   margin-bottom: 0.75rem;
   border-radius: 0.5rem;
+  min-width: 600px;
   box-shadow: var(--palette-dropLight);
 }
 
@@ -171,10 +210,20 @@ header {
   flex: 0 8 8rem;
   border-radius: 0.25rem;
   margin-right: 1.65rem;
+  background-image: var(--image-temp-movie);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
 }
 
 .movie-details {
+    align-self: baseline;
+  flex: 2 0 auto;
   display: inline-block;
+}
+
+.movie-details h3 {
+  text-align: left;
 }
 
 .movie-title {
@@ -184,6 +233,7 @@ header {
 
 .movie-info,
 .movie-item .actors {
+  line-height: 1.5;
   font-size: 0.85rem;
   color: var(--palette-subtext-light1);
   margin: 0.5rem 0;
@@ -218,10 +268,41 @@ header {
   color: var(--palette-subtext-light2)
 }
 
+.personal-details {
+  align-self: baseline;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  gap: 0.4rem;
+  margin-left: 1rem;
+}
+
+.watched-details {
+  text-align: right;
+}
+
+.inline * {
+  display: inline;
+}
+
 .movie-score {
   font-size: 1.2rem;
   color: var(--palette-highlightA);
-  margin-left: 1rem;
+}
+
+textarea {
+  min-width: 220px;
+  min-height: 100px;
+  padding: 0.5rem;
+  border: 0.2rem solid var(--palette-foreground1);
+  background-color: var(--palette-background3);
+  color: var(--palette-subtext-light1);
+  border-radius: 0.4rem;
+}
+
+textarea:focus {
+  outline: 0.2rem solid var(--palette-highlightA);
 }
 
 /* ||-Buttons */
@@ -236,7 +317,12 @@ a.tab,
   cursor: pointer;
 }
 
+input {
+  accent-color: var(--palette-highlightB);
+}
+
 .more-details-button {
+  /* TODO This element needs functionality to be relevant, visibility: hidden */
   padding: 0.25rem 0.5rem;
   border: none;
   border-radius: 0.5rem;
@@ -325,12 +411,13 @@ a.tab,
   --is-watched: 1;
 }
 
-.watched-false {
-  opacity: calc(1 - var(--is-watched) *100);
+.watched-false:hover {
+  visibility: visible;
 }
 
-.watched-true {
-  opacity: var(--is-watched);
+.watched-true:hover {
+  visibility: hidden;
+  opacity: 0;
 }
 
 /* ||-Modal-Window */
@@ -377,10 +464,27 @@ form label::after {
 
 /* ||-Media-Queries */
 
+@media screen and (max-width: 600px) {
+  body {
+    font-size: 12px;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (min-width: 1250px) {
+  ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+}
+
 @media(prefers-color-scheme: dark) {
   /* Use defaults */
 }
 
 @media(prefers-color-scheme: light) {
-  /* Will need a redesign */
+  /* TODO Will need a redesign */
 }

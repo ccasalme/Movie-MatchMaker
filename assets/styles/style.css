@@ -381,6 +381,11 @@ input {
   cursor: pointer;
 }
 
+.close.tooltip {
+  position: absolute;
+}
+
+
 /*||-Tooltips*/
 .tooltip {
   position: relative;
@@ -392,7 +397,7 @@ input {
   z-index: 1;
   visibility: hidden;
   width: auto;
-  background-color: var(--palette-background1);
+  background-color: rgba(0, 0, 0, 0.9);
   color: var(--palette-text-light);
   text-align: center;
   padding: 0.5rem;
@@ -400,6 +405,7 @@ input {
   opacity: 0;
   transition: opacity 0.5s;
   bottom: 110%;
+  font-size: 1rem;
 }
 
 .tooltip:hover .tooltip-text {
@@ -458,6 +464,16 @@ input {
 
 form label::after {
   content: " - ";
+}
+
+form h2::after {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 300;
+  letter-spacing: 0.1rem;
+  content: " Tell us a bit about the movie you want to see...";
+  text-decoration: none;
+  margin-bottom: 0.2rem;
 }
 
 

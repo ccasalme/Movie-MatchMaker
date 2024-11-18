@@ -10,6 +10,9 @@
   <!--Keywords that are relevant to the page content-->
   <meta name="keywords" content="Movies">
   <title>Movie Matchmaker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Urbanist:wght@100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./assets/styles/reset.css" />
   <link rel="stylesheet" href="./assets/styles/style.css">
 </head>
@@ -17,29 +20,33 @@
 <body>
     <header>
         <h1>Movie Matchmaker</h1>
-        <div class="movie-container">
+        <p class="subtitle">Find your movie match</p>
+        <div class="search-filters">
         <!-- Search Bar and Filter -->
         <div class="search-container">
-        <input type="text" placeholder="Search" class="search-bar">
-        <button class="filter-button">Filter</button>
-        <!-- Button to open modal to add here-->
+          <input type="text" placeholder="Search" class="search-bar">
+          <button class="search-button">Go</button>
+        </div>
         </div>
     </header>
 
     <!-- Navigation Tabs -->
     <nav class="filter-tags">
-      <a href="#" class="tab active">New Releases</a>
-      <a href="#" class="tab">Top Rated</a>
-      <a href="#" class="tab">Picks</a>
+      <p>Filters:</p>
+      <a href="#" class="tab active">Lorem Ipsum</a>
+      <a href="#" class="tab">Ibi Dolor</a>
+      <a href="#" class="tab">Sit Amet</a>
     </nav>
 
    
-    <!-- reference purpose for Movie List
-    <ul class="movie-list">
+<!--Please generate items in this list-->
+  <ul class="movie-list">
+
+    <!--These exist solely for reference purposes-->
       <li class="movie-item">
-        <img src="image.jpg" alt="Alt name here" class="movie-poster">
+        <img src="" alt="Movie 1 Poster" class="movie-poster">
         <div class="movie-details">
-          <h3 class="movie-title">Movie Name Here</h3>
+          <h3 class="movie-title">Movie 1 Name Here</h3>
           <div class="movie-info">
             <span class="rating">Rating</span>
             <span class="year">Year</span>
@@ -48,25 +55,189 @@
           </div>
           <p class="actors">Actors</p>
           <button class="more-details-button">More Details</button>
-   
         </div>
-        <span class="movie-score">⭐ movie-score</span>
-      </li>
+        <div class="personal-details">
+          <span class="watched-details">
+            <label for="watched">Seen it:</label>
+            <input type="checkbox" name="watched">
+          </span>
+          <span class="inline">
+            <p>My Score:</p>
+            <span class="movie-score">⭐⭐⭐⭐⭐</span>
+          </span>
+          <textarea class="notes">This is what I thought about it ...</textarea>
+        </div>
 
-    </ul>
-    --> 
+      </li>
+      <li class="movie-item">
+        <img src="image.jpg" alt="Movie 2 Poster" class="movie-poster">
+        <div class="movie-details">
+          <h3 class="movie-title">Movie 2 Name Here</h3>
+          <div class="movie-info">
+            <span class="rating">Rating</span>
+            <span class="year">Year</span>
+            <span class="genre">Genre</span>
+            <span class="duration">Duration</span>
+          </div>
+          <p class="actors">Actors</p>
+          <button class="more-details-button">More Details</button>
+        </div>
+        <div class="personal-details">
+          <span class="watched-details">
+            <label for="watched">Seen it:</label>
+            <input type="checkbox" name="watched">
+          </span>
+          <span class="inline">
+            <p>My Score:</p>
+            <span class="movie-score">⭐⭐⭐⭐⭐</span>
+          </span>
+          <textarea class="notes">This is what I thought about it ...</textarea>
+        </div>
+      </li>
+      <li class="movie-item">
+        <img src="image.jpg" alt="Movie 3 Poster" class="movie-poster">
+        <div class="movie-details">
+          <h3 class="movie-title">Movie 3 Name Here</h3>
+          <div class="movie-info">
+            <span class="rating">Rating</span>
+            <span class="year">Year</span>
+            <span class="genre">Genre</span>
+            <span class="duration">Duration</span>
+          </div>
+          <p class="actors">Actors</p>
+          <button class="more-details-button">More Details</button>
+        </div>
+        <div class="personal-details">
+          <span class="watched-details">
+            <label for="watched">Seen it:</label>
+            <input type="checkbox" name="watched">
+          </span>
+          <span class="inline">
+            <p>My Score:</p>
+            <span class="movie-score">⭐⭐⭐⭐⭐</span>
+          </span>
+          <textarea class="notes">This is what I thought about it ...</textarea>
+        </div>
+      </li>
+      <li class="movie-item">
+        <img src="image.jpg" alt="Movie 4 Poster" class="movie-poster">
+        <div class="movie-details">
+          <h3 class="movie-title">Movie 4 Name Here</h3>
+          <div class="movie-info">
+            <span class="rating">Rating</span>
+            <span class="year">Year</span>
+            <span class="genre">Genre</span>
+            <span class="duration">Duration</span>
+          </div>
+          <p class="actors">Actors</p>
+          <button class="more-details-button">More Details</button>
+        </div>
+        <div class="personal-details">
+          <span class="watched-details">
+            <label for="watched">Seen it:</label>
+            <input type="checkbox" name="watched">
+          </span>
+          <span class="inline">
+            <p>My Score:</p>
+            <span class="movie-score">⭐⭐⭐⭐⭐</span>
+          </span>
+          <textarea class="notes">This is what I thought about it ...</textarea>
+        </div>
+      </li>
+      <li class="movie-item">
+        <img src="image.jpg" alt="Movie 5 Poster" class="movie-poster">
+        <div class="movie-details">
+          <h3 class="movie-title">Movie 5 Name Here</h3>
+          <div class="movie-info">
+            <span class="rating">Rating</span>
+            <span class="year">Year</span>
+            <span class="genre">Genre</span>
+            <span class="duration">Duration</span>
+          </div>
+          <p class="actors">Actors</p>
+          <button class="more-details-button">More Details</button>
+        </div>
+        <div class="personal-details">
+          <span class="watched-details">
+            <label for="watched">Seen it:</label>
+            <input type="checkbox" name="watched">
+          </span>
+          <span class="inline">
+            <p>My Score:</p>
+            <span class="movie-score">⭐⭐⭐⭐⭐</span>
+          </span>
+          <textarea class="notes">This is what I thought about it ...</textarea>
+        </div>
+      </li>
+      <li class="movie-item">
+        <img src="image.jpg" alt="Movie 6 Poster" class="movie-poster">
+        <div class="movie-details">
+          <h3 class="movie-title">Movie 6 Name Here</h3>
+          <div class="movie-info">
+            <span class="rating">Rating</span>
+            <span class="year">Year</span>
+            <span class="genre">Genre</span>
+            <span class="duration">Duration</span>
+          </div>
+          <p class="actors">Actors</p>
+          <button class="more-details-button">More Details</button>
+        </div>
+        <div class="personal-details">
+          <span class="watched-details">
+            <label for="watched">Seen it:</label>
+            <input type="checkbox" name="watched">
+          </span>
+          <span class="inline">
+            <p>My Score:</p>
+            <span class="movie-score">⭐⭐⭐⭐⭐</span>
+          </span>
+          <textarea class="notes">This is what I thought about it ...</textarea>
+        </div>
+      </li>
+      <li class="movie-item">
+        <img src="image.jpg" alt="Movie 7 Poster" class="movie-poster">
+        <div class="movie-details">
+          <h3 class="movie-title">Movie 7 Name Here</h3>
+          <div class="movie-info">
+            <span class="rating">Rating</span>
+            <span class="year">Year</span>
+            <span class="genre">Genre</span>
+            <span class="duration">Duration</span>
+          </div>
+          <p class="actors">Actors</p>
+          <button class="more-details-button">More Details</button>
+        </div>
+        <div class="personal-details">
+          <span class="watched-details">
+            <label for="watched">Seen it:</label>
+            <input type="checkbox" name="watched">
+          </span>
+          <span class="inline">
+            <p>My Score:</p>
+            <span class="movie-score">⭐⭐⭐⭐⭐</span>
+          </span>
+          <textarea class="notes">This is what I thought about it ...</textarea>
+        </div>
+      </li>
+    <!--Reference ends here-->
+  </ul>
+
     
 
     <!-- Modal -->
   <dialog id="modal" class="modal">
     <form id="movieForm" method="dialog">
-      <span class="close">&times;</span>
+      <span class="close tooltip">&times;
+        <span class="tooltip-text">Exit without saving</span>
+      </span>
       <h2>Movie Input</h2>
-      <div>
+      <div class="tooltip">
+        <span class="tooltip-text">What is the name of the movie? Required.</span>
         <label for="title">Movie Title</label>
         <input type="text" id="title" required>
       </div>
-      <div>
+      <div class="tooltip">
+        <span class="tooltip-text">Which of these genres best represents this movie? Required.</span>
         <label for="genre">Genre</label>
         <select id="genre" name="genre" required>
           <option value="" disabled selected>Select one</option>
@@ -75,12 +246,16 @@
           <option value="Horror">Horror</option>
           <option value="Comedy">Comedy</option>
           <option value="Musical">Musical</option>
-          <option value="Sience Fiction">Sci-Fi</option>
+          <option value="Science Fiction">Sci-Fi</option>
           <option value="Anime">Anime</option>
           <option value="Documentary">Documentary</option>
         </select>
       </div>
-      <div>
+      <div class="tooltip">
+        <span class="tooltip-text watched-false">How much do you want to see this movie, on a 1 to 5 scale? Required.</span>
+        <!--TODO get tooltip logic to work based on 'watched' status 
+        <span class="tooltip-text watched-true">How much did you enjoy this movie, on a 1 to 5 scale? Required.</span>
+        -->
         <label for="personalRating">My Rating</label>
         <select id="personalRating" name="personalRating" required>
           <option value="" disabled selected>Select one</option>
@@ -91,11 +266,13 @@
           <option value="5">⭐⭐⭐⭐⭐</option>
         </select>
       </div>
-      <div>
+      <div class="tooltip">
+        <span class="tooltip-text">How long is the movie, in minutes? Required.</span>
         <label for="duration">Length of Movie (mins)</label>
         <input type="text" id="duration" required>
       </div>
-      <div>
+      <div class="tooltip">
+        <span class="tooltip-text">What is the standard (MPAA) movie rating? Required.</span>
         <label for="mpaa">MPAA Rating</label>
         <select id="mpaa" name="mpaa" required>
           <option value="" disabled selected>Select one</option>
@@ -107,17 +284,23 @@
           <option value="Unrated">Unrated</option>
         </select>
       </div>
-      <div>
+      <div class="tooltip">
+        <span class="tooltip-text">Have you already watched this movie?</span>
         <label for="watched">Watched</label>
         <input type="checkbox" id="watched" name="watched">
       </div>
-      <div>
+      <div class="tooltip">
+        <span class="tooltip-text">Pick an image from your computer to represent this movie. Required.</span>
         <label for="thumbnail">Movie Thumbnail</label>
         <input type="file" id="thumbnail" name="thumbnail">
       </div>
       <button class="submit" type="submit">Submit</button>
     </form>
   </dialog>
+
+  <div class="false-footer">
+    <!--This is for padding space-->
+  </div>
 
   <footer>
         <!-- Add Movie Button -->

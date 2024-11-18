@@ -1,6 +1,7 @@
 /* Table of Contents:
 ||-Movie-Item
 ||-Buttons
+||-Tooltips
 ||-Modal-Window
 ||-Media-Queries
 */
@@ -23,39 +24,90 @@
   --palette-text-dark: #030303;
   --palette-subtext-dark1: #090F10;
   --palette-subtext-dark2: #132022;
-  --image-header-embed: "./assets/images/directorscut.png";
+  --palette-radial-glow: radial-gradient(rgba(255, 255, 255, 0.116) 0, rgba(0, 0, 0, 0) 25%);
+  --image-header-embed: url("../../assets/images/directorscut.png");
+  --image-temp-movie: url("../../assets/images/BlankMovieIcon.png");
   --modal-display: 0;
+  --is-watched: 0;
 }
 
 /* General styles */
 body {
-  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Urbanist", Arial, sans-serif;
+  font-weight: 200;
   font-size: 16px;
+  letter-spacing: 0.05rem;
+  margin: 0;
+  min-height: 100vh;
   background-color: var(--palette-background1);
   color: var(--palette-text-light);
-  margin: 0;
-  padding: 1.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Urbanist", Arial, sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 2.8rem;
+  text-align: center;
+  margin: 2rem auto;
 }
 
 h1 {
-  font-family: "Alfa Slab One", Arial, serif;
-  font-weight: 600;
-  font-style: normal;
-  font-size: 2.5rem;
+  letter-spacing: 0.1rem;
+  text-decoration: underline;
+  text-shadow: 1px 3px 5px black;
+}
+h2 {
+  font-size: 2.2rem;
+}
+h3 {
+  font-size: 1.8rem;
+}
+h4 {
+  font-size: 1.4rem;
+}
+h5 {
+  font-size: 1rem;
+}
+h6 {
+  font-size: 0.8rem;
+}
+
+.subtitle {
   text-align: center;
-  margin-bottom: 1rem;
+  letter-spacing: 0.2rem;
+  background-image: var(--palette-radial-glow);
+  background-position: 0 200px;
+}
+
+.false-footer {
+  width: 100%;
+  height: 100px;
 }
 
 /* Search Bar and Filter Button */
+.search-filters {
+  padding: 0;
+  width: 100%;
+  margin-top: 2rem;
+  background-color: var(--palette-background3);
+  background-image: linear-gradient(var(--palette-background3), var(--palette-background1));
+}
+
 .search-container {
   display: flex;
   justify-content: flex-end;
-  gap: 0.75rem;
-  margin-bottom: 1.5rem;
+  gap: 0.25rem;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .search-bar {
@@ -66,7 +118,8 @@ h1 {
   width: 15rem;
 }
 
-.filter-button {
+.search-button {
+  float: right;
   padding: 0.5rem 0.75rem;
   border: 0.1rem solid var(--palette-foreground1);
   border-radius: 0.2rem;
@@ -75,9 +128,35 @@ h1 {
   cursor: pointer;
 }
 
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: baseline;
+  width: 100%;
+  text-align: center;
+  padding: 0 10%;
+  background-color: var(--palette-background1);
+  background-image: radial-gradient(rgba(255, 255, 255, 0.116) 0, rgba(0, 0, 0, 0) 50%);
+  margin-bottom: 3rem;
+}
+
+
 /* Header */
 header {
+  display: flex;
+  flex-direction: column;
   background-image: var(--image-header-embed);
+  background-size: cover;
+  width: 100%;
+  height: 10rem;
+  margin-bottom: 4rem;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  margin-top: 3rem;
 }
 
 /* Navigation Tabs */
@@ -93,6 +172,7 @@ header {
   text-decoration: none;
   border-radius: 0.5rem;
   background-color: var(--palette-background3);
+  margin-right: 0.3rem;
 }
 
 .tab.active {
@@ -106,15 +186,22 @@ header {
   padding: 0;
 }
 
+ul {
+  display: flex;
+  flex-direction: column;
+}
+
 /* ||-Movie-Item */
 .movie-item {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   background-color: var(--palette-background1);
   background-image: linear-gradient(var(--palette-background1), var(--palette-background2));
   padding: 1rem;
   margin-bottom: 0.75rem;
   border-radius: 0.5rem;
+  min-width: 600px;
   box-shadow: var(--palette-dropLight);
 }
 
@@ -123,10 +210,20 @@ header {
   flex: 0 8 8rem;
   border-radius: 0.25rem;
   margin-right: 1.65rem;
+  background-image: var(--image-temp-movie);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
 }
 
 .movie-details {
+    align-self: baseline;
+  flex: 2 0 auto;
   display: inline-block;
+}
+
+.movie-details h3 {
+  text-align: left;
 }
 
 .movie-title {
@@ -136,6 +233,7 @@ header {
 
 .movie-info,
 .movie-item .actors {
+  line-height: 1.5;
   font-size: 0.85rem;
   color: var(--palette-subtext-light1);
   margin: 0.5rem 0;
@@ -170,16 +268,48 @@ header {
   color: var(--palette-subtext-light2)
 }
 
+.personal-details {
+  align-self: baseline;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  gap: 0.4rem;
+  margin-left: 1rem;
+}
+
+.watched-details {
+  text-align: right;
+}
+
+.inline * {
+  display: inline;
+}
+
 .movie-score {
   font-size: 1.2rem;
   color: var(--palette-highlightA);
-  margin-left: 1rem;
+}
+
+textarea {
+  min-width: 220px;
+  min-height: 100px;
+  padding: 0.5rem;
+  border: 0.2rem solid var(--palette-foreground1);
+  background-color: var(--palette-background3);
+  color: var(--palette-subtext-light1);
+  border-radius: 0.4rem;
+}
+
+textarea:focus {
+  outline: 0.2rem solid var(--palette-highlightA);
 }
 
 /* ||-Buttons */
 .more-details-button,
 .add-movie-button,
-a.tab {
+a.tab,
+.submit {
   padding: 0.5rem 0.8rem;
   border: none;
   border-radius: 0.5rem;
@@ -187,7 +317,12 @@ a.tab {
   cursor: pointer;
 }
 
+input {
+  accent-color: var(--palette-highlightB);
+}
+
 .more-details-button {
+  /* TODO This element needs functionality to be relevant, visibility: hidden */
   padding: 0.25rem 0.5rem;
   border: none;
   border-radius: 0.5rem;
@@ -209,7 +344,8 @@ a.tab {
   margin-left: calc(var(--button-size)*0.5);
 }
 
-.add-movie-button {
+.add-movie-button,
+.submit {
   background-color: var(--palette-highlightB);
   display: block;
   margin: 1.5rem auto;
@@ -217,13 +353,19 @@ a.tab {
   box-shadow: 0 0.2rem 0.4rem var(--palette-dropLight);
 }
 
-/* Close Button */
+.submit {
+  margin: 0.5rem auto;
+}
+
 .close {
   display: block;
-  float: right;
+  position: absolute;
+  top: 0.25rem;
+  right: 0.25rem;
   width: 2rem;
   height: 2rem;
   background-color: var(--palette-highlightB);
+  background-image: radial-gradient(ellipse farthest-corner, var(--palette-highlightB-accent-border), var(--palette-highlightB));
   color: var(--palette-text-light);
   border-radius: 50%;
   text-align: center;
@@ -239,11 +381,55 @@ a.tab {
   cursor: pointer;
 }
 
+.close.tooltip {
+  position: absolute;
+}
+
+
+/*||-Tooltips*/
+.tooltip {
+  position: relative;
+  display: block;
+}
+
+.tooltip .tooltip-text {
+  position: absolute;
+  z-index: 1;
+  visibility: hidden;
+  width: auto;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: var(--palette-text-light);
+  text-align: center;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  opacity: 0;
+  transition: opacity 0.5s;
+  bottom: 110%;
+  font-size: 1rem;
+}
+
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 100;
+}
+
+#watched:checked {
+  --is-watched: 1;
+}
+
+.watched-false:hover {
+  visibility: visible;
+}
+
+.watched-true:hover {
+  visibility: hidden;
+  opacity: 0;
+}
+
 /* ||-Modal-Window */
 /* TODO style modal */
 .modal {
   position: fixed;
-  z-index: 1; /* Sits on top */
   left: 0;
   top: 0;
   width: 100%;
@@ -253,22 +439,68 @@ a.tab {
 }
 
 #movieForm {
+  font-weight: 400;
+  font-family: Arial, sans-serif;
+  letter-spacing: normal;
+  position: relative;
   line-height: 1.5;
   background-color: var(--palette-foreground1);
+  background-image: linear-gradient(var(--palette-foreground3), var(--palette-foreground1));
   margin: 15% auto;
-  padding: 2rem;
-  border: 1px solid var(--palette-foreground2);
+  /* top - right - bottom - left */
+  padding: 1.5rem 2rem 1rem 2rem;
+  border: 3px solid var(--palette-foreground2);
+  border-radius: 1rem;
   width: 80%; 
   max-width: 800px;
   color: var(--palette-text-dark);
 }
 
+#movieForm h2 {
+  text-decoration: underline;
+  text-align: left;
+  margin: 0;
+}
+
+form label::after {
+  content: " - ";
+}
+
+form h2::after {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 300;
+  letter-spacing: 0.1rem;
+  content: " Tell us a bit about the movie you want to see...";
+  text-decoration: none;
+  margin-bottom: 0.2rem;
+}
+
+
+
 /* ||-Media-Queries */
+
+@media screen and (max-width: 600px) {
+  body {
+    font-size: 12px;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (min-width: 1250px) {
+  ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+}
 
 @media(prefers-color-scheme: dark) {
   /* Use defaults */
 }
 
 @media(prefers-color-scheme: light) {
-  /* Will need a redesign */
+  /* TODO Will need a redesign */
 }

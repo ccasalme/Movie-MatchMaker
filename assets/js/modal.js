@@ -57,21 +57,18 @@ form.addEventListener('submit', (event) => {
 
     // Save the updated array back to localStorage
     localStorage.setItem('userDataArray', JSON.stringify(existingData));
-
-    // Display a confirmation message to the user
-    confirmationMessage.textContent = "Your data has been saved!";
-
-    // Clear the form
-    form.reset();
-
-    // Close the modal
-    if (modal instanceof HTMLDialogElement) {
-        modal.close();
-    }
   };
 
   // Read the image file as a Data URL (Base64 string)
   reader.readAsDataURL(thumbnail);
+
+  // Clear the form
+  form.reset();
+
+  // Close the modal
+  if (modal instanceof HTMLDialogElement) {
+      modal.close();
+  }
 
 });
 

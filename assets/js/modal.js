@@ -33,6 +33,7 @@ form.addEventListener('submit', (event) => {
     const mpaa = document.getElementById('mpaa').value;
     const watched = document.getElementById('watched').checked;
     const thumbnail = document.getElementById('thumbnail').files[0];
+    const notes = document.getElementById('notes').value.trim();
 
     // Create a FileReader to convert the image file to Base64
   const reader = new FileReader();
@@ -45,7 +46,8 @@ form.addEventListener('submit', (event) => {
         duration,
         mpaa,
         watched,
-        thumbnail: reader.result
+        thumbnail: reader.result,
+        notes
         
     };
 

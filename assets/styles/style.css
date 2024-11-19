@@ -197,6 +197,8 @@ footer {
 ul {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
+  gap: 1rem;
 }
 
 /* ||-Movie-Item */
@@ -274,6 +276,11 @@ ul {
 
 .duration {
   color: var(--palette-subtext-light2)
+}
+
+.duration::after {
+  font-size: 0.65rem;
+  content: " (mins)";
 }
 
 .personal-details {

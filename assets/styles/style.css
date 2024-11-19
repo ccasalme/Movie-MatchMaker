@@ -93,6 +93,14 @@ h6 {
   height: 100px;
 }
 
+label[for="notes"] {
+  display: block;
+}
+
+.temp {
+  visibility: hidden;
+}
+
 /* Search Bar and Filter Button */
 .search-filters {
   padding: 0;
@@ -400,12 +408,12 @@ input {
   background-color: rgba(0, 0, 0, 0.9);
   color: var(--palette-text-light);
   text-align: center;
-  padding: 0.5rem;
+  padding: 0.25rem 2rem;
   border-radius: 0.5rem;
   opacity: 0;
   transition: opacity 0.5s;
-  bottom: 110%;
-  font-size: 1rem;
+  bottom: 120%;
+  font-size: 0.8rem;
 }
 
 .tooltip:hover .tooltip-text {
@@ -443,7 +451,7 @@ input {
   font-family: Arial, sans-serif;
   letter-spacing: normal;
   position: relative;
-  line-height: 1.5;
+  line-height: 1.6;
   background-color: var(--palette-foreground1);
   background-image: linear-gradient(var(--palette-foreground3), var(--palette-foreground1));
   margin: 15% auto;

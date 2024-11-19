@@ -44,6 +44,8 @@ form.addEventListener('submit', (event) => {
     // Once the file is read, store the form data and image in localStorage
     const newEntry = {
         title,
+        year,
+        genre,
         pRating,
         duration,
         mpaa,

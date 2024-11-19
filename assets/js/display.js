@@ -1,19 +1,22 @@
 let movies = []; // No movies initially
 
-const temp = localStorage.getItem('userDataArray');
-if (temp){
-    console.log("have movies will display them")
-    movies = JSON.parse(temp);
+const getData = function(){
+    const temp = localStorage.getItem('userDataArray');
+    if (temp){
+        movies = JSON.parse(temp);
+    }
+    return movies;
 }
+
 
 // Container to display movies
 const movieListContainer = document.querySelector(".movie-list");
 
 // Function to display movies
-function displayMovies(outputMovies) {
+function displayMovies() {
     // Clear existing movies
     movieListContainer.innerHTML = "";
-
+    outputMovies = getData();
     if (outputMovies.length === 0) {
     movieListContainer.innerHTML = `<p>No movies found. Add a movie to get started!</p>`;
     return;
@@ -27,7 +30,7 @@ function displayMovies(outputMovies) {
     let checkbox = document.createElement('input');
     checkbox.type = "checkbox";
     checkbox.name = "watched";
-    checkbox.checked = movie.watched;
+    checkbox.checked = movie
 
     let label = document.createElement('label');
     label.htmlFor = "watched";
@@ -65,4 +68,4 @@ function displayMovies(outputMovies) {
 }
 
 // Initial display (empty state)
-displayMovies(movies);
+displayMovies();

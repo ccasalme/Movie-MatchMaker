@@ -50,7 +50,6 @@ form.addEventListener('submit', (event) => {
         watched,
         thumbnail: reader.result,
         notes
-        
     };
 
     // Get the existing data array from localStorage, or start with an empty array
@@ -64,7 +63,10 @@ form.addEventListener('submit', (event) => {
   };
 
   // Read the image file as a Data URL (Base64 string)
-  reader.readAsDataURL(thumbnail);
+  if(thumbnail){
+    reader.readAsDataURL(thumbnail);
+  }
+
 
   // Clear the form
   form.reset();

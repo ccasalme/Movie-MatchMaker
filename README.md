@@ -53,3 +53,13 @@ As an avid movie watcher, I want to keep track of the movies I have:
 
 ## Disclaimers
 Users are encouraged to input data responsibly, as Movie MatchMaker is designed for personal reference and organization.
+
+### Wireframes
+
+<img width="1440" alt="Screenshot 2024-11-06 at 1 25 00 PM" src="https://github.com/user-attachments/assets/4a961dde-2140-415b-b785-132ac3166f25">
+
+<img width="988" alt="Screenshot 2024-11-05 at 10 33 28 PM" src="https://github.com/user-attachments/assets/f8cee156-5473-4e8b-bfdf-b77fe1fa1b7d">
+
+### Finished Look
+<img width="1421" alt="Screenshot 2024-11-18 at 11 25 08 PM" src="https://github.com/user-attachments/assets/721cc4f8-91a0-4591-8c7d-9760860ef948">
+

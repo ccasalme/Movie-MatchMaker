@@ -76,7 +76,12 @@ form.addEventListener("submit", (event) => {
     if (modal instanceof HTMLDialogElement) {
         modal.close();
     }
-    window.location.reload();
+    window.location.reload(); 
+    
+    //Reload the page to display the new movie without refreshing the page
+    //may not need the render.js file (Cyrl's & Corey's note)
+    //Leave the render file just in case we need it and the data grows
+    //Limitation: we have not tested it yet with larger data sets
 });
 
 //Cyrl's notes if we want to implement the render.js file

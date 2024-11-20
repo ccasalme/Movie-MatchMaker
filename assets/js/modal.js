@@ -76,6 +76,7 @@ form.addEventListener("submit", (event) => {
     if (modal instanceof HTMLDialogElement) {
         modal.close();
     }
+    window.location.reload();
 });
 
 //Cyrl's notes if we want to implement the render.js file

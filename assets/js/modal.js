@@ -78,5 +78,7 @@ form.addEventListener('submit', (event) => {
       modal.close();
   }
 
+window.location.reload();
+  
 });
 

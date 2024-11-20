@@ -7,7 +7,7 @@ Movie MatchMaker is your one-stop movie database designed for avid movie lovers,
 
 ## Live Link
 
-[https://github.com/ccasalme/Movie-MatchMaker]
+[https://ccasalme.github.io/Movie-MatchMaker/]
 
 ## User Story
 As an avid movie watcher, I want to keep track of the movies I have:
